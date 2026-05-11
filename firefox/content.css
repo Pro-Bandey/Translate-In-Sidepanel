@@ -1,0 +1,16 @@
+html[data-ext-theme="dark"] {
+    filter: invert(.9) hue-rotate(180deg) brightness(1.1) contrast(.95)!important;
+    background-color: #fff!important;
+}
+html[data-ext-theme="dark"] img, html[data-ext-theme="dark"] svg, html[data-ext-theme="dark"] canvas, html[data-ext-theme="dark"] button svg, html[data-ext-theme="dark"][style*="background-image"] {
+    filter: invert(1) hue-rotate(180deg)!important;
+}
+
+/* Chrome/Safari & Firefox Scrollbar Support */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+}
+::-webkit-scrollbar { width: 2px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 100px; }

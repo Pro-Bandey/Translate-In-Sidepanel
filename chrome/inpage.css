@@ -1,0 +1,331 @@
+@font-face {
+    font-family: 'Noto Nastaliq Urdu';
+    src: url(https://cdn.jsdelivr.net/fontsource/fonts/noto-nastaliq-urdu@latest/arabic-400-normal.woff2) format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans Devanagari';
+    src: url(https://cdn.jsdelivr.net/fontsource/fonts/noto-sans-devanagari@latest/devanagari-400-normal.woff2) format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url(https://cdn.jsdelivr.net/fontsource/fonts/noto-sans@latest/latin-400-normal.woff2) format('woff2');
+    font-display: swap;
+}
+
+:root {
+    --trans-bg-app: #0f172a;
+    --trans-bg-card: #1e293b;
+    --trans-text-main: #f8fafc;
+    --trans-text-muted: #94a3b8;
+    --trans-border: #334155;
+    --trans-primary: #6366f1;
+    --trans-primary-hover: #919aec;
+    --trans-input-bg: #0f172a;
+    --trans-hover-bg: #312e81;
+    --trans-shadow-sm: 0 1px 3px rgba(0, 0, 0, .5);
+    --trans-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, .4);
+    --trans-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, .5);
+}
+
+#trans-tooltip {
+    position: absolute;
+    z-index: 2147483647;
+    color: var(--trans-text-main);
+    font-size: 13px;
+    box-shadow: var(--trans-shadow-sm);
+    pointer-events: none;
+    opacity: 0;
+    background: var(--trans-bg-card);
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: opacity .2s ease-in-out;
+}
+
+#trans-tooltip.show {
+    opacity: 1;
+}
+
+.font-arabic {
+    font-family: 'Noto Nastaliq Urdu', sans-serif !important;
+    direction: rtl;
+}
+
+.font-hindi {
+    font-family: 'Noto Sans Devanagari', sans-serif !important;
+}
+
+.font-latin {
+    font-family: 'Noto Sans', sans-serif !important;
+}
+
+#trans-selection-icon {
+    position: absolute;
+    z-index: 2147483646;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 6px;
+    background: transparent;
+    transition: transform 0.2s;
+}
+
+#trans-selection-icon:hover {
+    transform: scale(1.1);
+    box-shadow: var(--trans-shadow-lg);
+}
+
+#trans-inline-popup {
+    position: absolute;
+    z-index: 2147483647;
+    width: 360px;
+    background: var(--trans-bg-card);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
+    border: 1px solid var(--trans-primary);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', 'Noto Sans', sans-serif;
+}
+
+.trans-inline-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--trans-bg-card);
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--trans-border);
+    border-radius: 12px 12px 0 0;
+    position: relative;
+}
+
+.trans-custom-select {
+    position: relative;
+    flex: 1;
+    max-width: 140px;
+}
+
+.trans-select-btn {
+    background: var(--trans-bg-card);
+    border: 1px solid var(--trans-border);
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 12px;
+    color: var(--trans-text-main);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    user-select: none;
+}
+
+.trans-select-btn:hover,
+.trans-custom-select.active .trans-select-btn {
+    box-shadow: rgba(79, 70, 229, 0.1) 0px 0px 0px 3px;
+    border-color: var(--trans-primary);
+}
+
+.trans-select-btn span {
+    font-size: 8px;
+    color: var(--trans-border);
+    margin-left: 6px;
+}
+
+.trans-select-dropdown {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    width: 160px;
+    background: var(--trans-bg-card);
+    border: 1px solid var(--trans-border);
+    border-radius: 8px;
+    box-shadow: var(--trans-shadow-md);
+    z-index: 2147483648;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.trans-select-dropdown.alt {
+    right: 0;
+    left: auto;
+}
+
+.trans-custom-select.active .trans-select-dropdown {
+    display: flex;
+}
+
+.trans-search-box {
+    padding: 8px;
+    border: none;
+    border-bottom: 1px solid var(--trans-border);
+    background: transparent;
+    color: var(--trans-text-muted);
+    font-size: 12px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.trans-options-list {
+    max-height: 150px;
+    overflow-y: auto;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.trans-options-list li {
+    padding: 8px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    color: var(--trans-text-main);
+    transition: background .1s;
+}
+
+.trans-options-list li:hover {
+    background: var(--trans-hover-bg);
+    color: var(--trans-primary-hover);
+}
+
+.trans-inline-swap {
+    color: var(--trans-primary);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--trans-shadow-sm);
+    background: var(--trans-bg-card);
+    border: 1px solid var(--trans-border);
+    border-radius: 50%;
+    transition: 0.2s;
+}
+
+.trans-inline-swap:hover {
+    transform: scale(1.1) rotate(180deg);
+    background: var(--trans-hover-bg);
+}
+
+.trans-inline-swap svg {
+    width: 14px;
+    height: 14px;
+    fill: currentcolor;
+}
+
+.trans-inline-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.trans-inline-textarea {
+    width: 100%;
+    min-height: 50px;
+    height: 90px;
+    padding: 12px;
+    border: none;
+    font-size: 13px;
+    color: var(--trans-text-main);
+    resize: vertical;
+    outline: none;
+    box-sizing: border-box;
+    font-family: inherit;
+    line-height: 1.4;
+}
+
+#trans-inline-source {
+    background: var(--trans-bg-app);
+    border-bottom: 1px dashed var(--trans-text-main);
+}
+
+#trans-inline-target {
+    background: var(--trans-bg-card);
+    color: var(--trans-text-main);
+    border-radius: 0;
+    line-height: normal;
+}
+
+.trans-inline-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--trans-bg-app);
+    padding: 6px 12px;
+    border-top: 1px solid var(--trans-border);
+    border-radius: 0 0 12px 12px;
+}
+
+.trans-inline-action-btn {
+    background: none;
+    border: none;
+    font-size: 12px;
+    color: var(--trans-primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 600;
+    transition: color 0.2s;
+    padding: 4px;
+}
+
+.trans-inline-action-btn:hover {
+    color: var(--trans-primary-hover);
+}
+
+.trans-inline-action-btn svg {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+}
+
+.trans-inline-action-select {
+    background: var(--trans-bg-app);
+    border: 1px solid var(--trans-border);
+    border-radius: 6px;
+    padding: 4px 8px;
+    font-size: 11px;
+    color: var(--trans-text-main);
+    cursor: pointer;
+    outline: none;
+}
+
+.trans-inline-action-select:hover {
+    box-shadow: rgba(79, 70, 229, 0.1) 0px 0px 0px 3px;
+    border-color: var(--trans-primary);
+}
+.trans-inline-action-select option {
+    background: var(--trans-bg-app);
+    color: var(--trans-text-main);
+}
+
+.trans-inline-textarea::-webkit-scrollbar,
+.trans-options-list::-webkit-scrollbar {
+    width: 6px !important;
+}
+
+.trans-inline-textarea::-webkit-scrollbar-thumb,
+.trans-options-list::-webkit-scrollbar-thumb {
+    background: rgb(203, 213, 225) !important;
+    border-radius: 10px !important;
+}
+
+.trans-inline-textarea::-webkit-scrollbar-track,
+.trans-options-list::-webkit-scrollbar-track {
+    background: transparent !important;
+}
+
+.trans-inline-textarea::-webkit-scrollbar-button {
+    appearance: none;
+    -webkit-appearance: none;
+}

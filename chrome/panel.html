@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="panel.css" />
+</head>
+
+<body>
+    <div id="dropOverlay" class="drop-overlay">
+        <div class="drop-content">
+            <svg viewBox="0 0 24 24">
+                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
+            </svg>
+            <span>Drop text here to translate</span>
+        </div>
+    </div>
+    <iframe id="translateFrame" name="translateFrame" src="about:blank"></iframe>
+    <div class="footer">
+        <div class="footer-left" style="flex-direction: row; align-items: center; gap: 12px">
+            <div style="display: flex; gap: 8px">
+                <button id="settingsBtn" class="settings-btn" title="Settings">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.06-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.73,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.06,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.43-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.49-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z" />
+                    </svg>
+                </button>
+                <button id="historyBtn" class="settings-btn" title="History & Favorites">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M13.5,8H12V13L16.28,15.54L17,14.33L13.5,12.25V8M13,3A9,9 0 0,0 4,12H1L4.96,16.03L9,12H6A7,7 0 0,1 13,5A7,7 0 0,1 20,12A7,7 0 0,1 13,19C11.07,19 9.32,18.21 8.06,16.94L6.64,18.36C8.27,20 10.5,21 13,21A9,9 0 0,0 22,12A9,9 0 0,0 13,3" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="footer-right">
+            <div title="Rate Us" class="rating-wrapper"><span class="rate-text">Rate Us</span>
+                <div class="rating-group"><input name="fst" id="fst-5" value="5" type="radio" /><label for="fst-5"><a
+                            href="#" target="_blank"><svg viewBox="0 0 576 512">
+                                <path
+                                    d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+                                </path>
+                            </svg></a></label><input name="fst" id="fst-4" value="4" type="radio" /><label
+                        for="fst-4"><a href="#" target="_blank"><svg viewBox="0 0 576 512">
+                                <path
+                                    d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+                                </path>
+                            </svg></a></label><input name="fst" id="fst-3" value="3" type="radio" /><label
+                        for="fst-3"><a href="#" target="_blank"><svg viewBox="0 0 576 512">
+                                <path
+                                    d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+                                </path>
+                            </svg></a></label><input name="fst" id="fst-2" value="2" type="radio" /><label
+                        for="fst-2"><a href="#" target="_blank"><svg viewBox="0 0 576 512">
+                                <path
+                                    d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+                                </path>
+                            </svg></a></label><input name="fst" id="fst-1" value="1" type="radio" checked /><label
+                        for="fst-1"><a href="#" target="_blank"><svg viewBox="0 0 576 512">
+                                <path
+                                    d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+                                </path>
+                            </svg></a></label></div>
+            </div>
+            <span class="dev-team">by
+                <a title="M Ramzan Ch" href="http://mramzanch.blogspot.com/" target="_blank" class="dev-team-link">M
+                    Ramzan Ch</a>
+            </span>
+        </div>
+    </div>
+    <div class="settings-overlay" id="settingsOverlay">
+        <div class="settings-modal">
+            <div class="settings-header">
+                <div class="header-title">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z" />
+                    </svg>Settings
+                </div>
+                <div style="display: flex; align-items: center; gap: 15px">
+                    <button title="Close Box" id="closeSettings" class="close-btn">&times;</button>
+                </div>
+            </div>
+            <div class="settings-maingr">
+                <div class="settings-group">
+                    <span>Enable Quick Tooltip</span>
+                    <label class="toggle-switch" title="Enable Quick Tooltip">
+                        <input type="checkbox" id="tooltipTogglePanel">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="settings-group">
+                    <span>Chnage Theme</span>
+                    <label class="toggle-switch" title="Chnage Theme">
+                        <input type="checkbox" id="themeTogglePanel" />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="translation-card">
+                <div class="form-group" style="
+              margin-bottom: 12px;
+              padding-bottom: 12px;
+              border-bottom: 1px dashed var(--border);
+            ">
+                    <span title="Select Your Favorite Translation Engine" class="label">Translation Engine</span>
+                    <div class="custom-select" id="providerSelect">
+                        <div title="Google Translate" class="select-button" data-val="google">
+                            Google Translate
+                            <span style="font-size: 10px; color: var(--text-muted)">▼</span>
+                        </div>
+                        <div class="select-dropdown">
+                            <ul class="options-list"></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" style="margin-bottom: 6px">
+                    <span title="Select Translate From" class="label">Translate From</span>
+                    <div class="custom-select" id="srcSelect">
+                        <div title="Detect Automaticly" class="select-button" data-val="auto">
+                            Detect Language
+                            <span style="font-size: 10px; color: var(--text-muted)">▼</span>
+                        </div>
+                        <div class="select-dropdown">
+                            <input title="Type Here To Search" type="text" class="search-box"
+                                placeholder="Search language..." />
+                            <ul class="options-list"></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="swap-container">
+                    <button class="swap-btn" id="swapLang" title="Swap Languages">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M16 17.01V10h-2v7.01h-3L15 21l4-3.99h-3zM9 3L5 6.99h3V14h2V6.99h3L9 3z" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="form-group" style="margin-top: 6px">
+                    <span title="Select Translate To" class="label">Translate To</span>
+                    <div class="custom-select" id="targetSelect">
+                        <div title="English" class="select-button" data-val="en">
+                            English
+                            <span style="font-size: 10px; color: var(--text-muted)">▼</span>
+                        </div>
+                        <div class="select-dropdown alt">
+                            <input title="Type Here To Search" type="text" class="search-box alt"
+                                placeholder="Search language..." />
+                            <ul class="options-list"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="status-footer" id="statusMsg">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                </svg>Settings Saved
+            </div>
+        </div>
+    </div>
+    <div class="settings-overlay" id="historyOverlay">
+        <div class="settings-modal" style="padding-bottom: 10px">
+            <div class="settings-header" style="margin-bottom: 10px">
+                <div class="header-title">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M13.5,8H12V13L16.28,15.54L17,14.33L13.5,12.25V8M13,3A9,9 0 0,0 4,12H1L4.96,16.03L9,12H6A7,7 0 0,1 13,5A7,7 0 0,1 20,12A7,7 0 0,1 13,19C11.07,19 9.32,18.21 8.06,16.94L6.64,18.36C8.27,20 10.5,21 13,21A9,9 0 0,0 22,12A9,9 0 0,0 13,3" />
+                    </svg>History & Favorites
+                </div>
+                <button id="closeHistory" title="Close Box" class="close-btn">&times;</button>
+            </div>
+            <div class="history-list-container">
+                <ul id="historyList" class="history-list"></ul>
+                <div id="emptyHistoryMsg" class="empty-msg">
+                    No history yet. Start translating!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="shared.js"></script>
+    <script src="panel.js"></script>
+    <script src="src/toaster.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+[
+  {
+    "id": 2,
+    "priority": 2,
+    "action": {
+      "type": "modifyHeaders",
+      "requestHeaders": [
+        {
+          "header": "referer",
+          "operation": "remove"
+        },
+        {
+          "header": "origin",
+          "operation": "remove"
+        }
+      ],
+      "responseHeaders": [
+        {
+          "header": "Access-Control-Allow-Origin",
+          "operation": "set",
+          "value": "*"
+        }
+      ]
+    },
+    "condition": {
+      "urlFilter": "translate.googleapis.com",
+      "resourceTypes": ["xmlhttprequest", "other"]
+    }
+  },
+  {
+    "id": 4,
+    "priority": 2,
+    "action": {
+      "type": "modifyHeaders",
+      "requestHeaders": [
+        { "header": "Sec-Ch-Ua-Mobile", "operation": "remove" },
+        { "header": "Sec-Ch-Ua-Platform", "operation": "remove" },
+        { "header": "Referer", "operation": "remove" },
+        {
+          "header": "Sec-Fetch-Site",
+          "operation": "set",
+          "value": "same-origin"
+        },
+        { "header": "Sec-Fetch-Dest", "operation": "set", "value": "document" }
+      ],
+      "responseHeaders": [
+        { "header": "X-Frame-Options", "operation": "remove" },
+        { "header": "Content-Security-Policy", "operation": "remove" }
+      ]
+    },
+    "condition": {
+      "regexFilter": "(translate\\.google\\.com|deepl\\.com|bing\\.com)",
+      "resourceTypes": ["sub_frame", "xmlhttprequest"]
+    }
+  }
+]
