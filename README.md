@@ -34,6 +34,3 @@ Since this is a custom Chrome Extension, you can easily install it locally in a 
 
 ## If you enjoy using Translate In Sidepanel, please consider a star! and Best Review!
 
-
----
-Created with ♥ by [**M Ramzan Ch**](https://github.com/MegaMind-Solution/Trans-In-Side)
