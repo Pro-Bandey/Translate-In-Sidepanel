@@ -2,6 +2,8 @@
 
 **Translate In Sidepanel** is a powerful, modern Chrome extension that brings seamless multi-language translation directly to your browser's side panel. With a beautifully crafted UI, dark mode support, and searchable language dropdowns, translating text while browsing has never been easier.
 
+
+[![Download On Firebox](https://raw.githubusercontent.com/MegaMind-Solution/MegaMind-Solution/main/images/badges/firefoxaddons.png)](https://addons.mozilla.org/en-US/firefox/addon/translate-in-sidepanel/)
 ## ✨ Key Features
 
 *   **⚡ Quick Side Panel Access**: View and translate content instantly without ever leaving your active tab.
