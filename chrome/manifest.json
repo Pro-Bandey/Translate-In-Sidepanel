@@ -1,38 +1,44 @@
 {
   "manifest_version": 3,
+  "version": "15.5",
+  "version_name": "V15.5",
   "name": "Translate In Sidepanel",
   "short_name": "Trans In Side",
-  "version": "15.1",
-  "version_name": "V15.1",
-  "author": "M Ramzan Ch",
-  "description": "",
+  "description": "Translate selected text in Sidepanel, Double on any word totransalte in page and in page selection translate box.",
+  "author": "Pro Bandey",
+  "homepage_url": "https://Pro-Bandey.github.io?pro=Translate-In-Sidepanel",
+  
+  "offline_enabled": false,
   "minimum_chrome_version": "130",
-  "offline_enabled": true,
-  "homepage_url": "https://github.com/MegaMind-Solution",
+
   "icons": {
-    "16": "./src/16.png",
-    "32": "./src/32.png",
-    "48": "./src/48.png",
-    "128": "./src/128.png",
-    "256": "./src/icon.png"
+    "16": "src/16.png",
+    "32": "src/32.png",
+    "48": "src/48.png",
+    "128": "src/128.png",
+    "256": "src/icon.png"
   },
+
   "action": {
-    "default_popup": "./option.html",
+    "default_popup": "option.html",
     "default_title": "Trans In Side",
     "default_icon": {
-      "16": "./src/16.png",
-      "32": "./src/32.png",
-      "48": "./src/48.png",
-      "128": "./src/128.png",
-      "256": "./src/icon.png"
+      "16": "src/16.png",
+      "32": "src/32.png",
+      "48": "src/48.png",
+      "128": "src/128.png",
+      "256": "src/icon.png"
     }
   },
+
   "options_ui": {
     "browser_style": true,
-    "page": "./option.html",
+    "page": "option.html",
     "open_in_tab": false
   },
-  "side_panel": { "default_path": "./panel.html" },
+
+  "side_panel": { "default_path": "panel.html" },
+
   "permissions": [
     "sidePanel",
     "contextMenus",
@@ -42,18 +48,22 @@
     "activeTab",
     "tts"
   ],
-  "commands": {
-    "translate-shortcut": {
-      "suggested_key": { "default": "Alt+T", "mac": "Command+Shift+Y" },
-      "description": "Translate selected text in Side Panel"
-    }
-  },
+
   "host_permissions": [
     "https://translate.google.com/*",
     "https://*.deepl.com/*",
     "https://*.bing.com/*"
   ],
+
+  "commands": {
+    "translate-shortcut": {
+      "suggested_key": { "default": "Alt+T", "mac": "Command+Shift+Y" },
+      "description": "Translate selected text in Sidepanel"
+    }
+  },
+
   "background": { "service_worker": "background.js" },
+
   "content_scripts": [
     {
       "matches": [
@@ -65,23 +75,24 @@
       "js": ["content.js"],
       "css": ["content.css"]
     },
-
     {
       "matches": ["<all_urls>"],
       "js": ["inpage.js"],
       "css": ["inpage.css"]
     }
   ],
+
   "web_accessible_resources": [
     {
       "resources": [
-        "./src/NotoNastaliqhUrdu.woff2",
-        "./src/NotoSans.woff2",
-        "./src/NotoSansDevanagari.woff2"
+        "src/NotoNastaliqhUrdu.woff2",
+        "src/NotoSans.woff2",
+        "src/NotoSansDevanagari.woff2"
       ],
       "matches": ["<all_urls>"]
     }
   ],
+
   "declarative_net_request": {
     "rule_resources": [
       { "id": "ruleset_1", "enabled": true, "path": "rules.json" }
