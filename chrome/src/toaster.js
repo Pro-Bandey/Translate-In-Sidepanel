@@ -19,7 +19,7 @@ window.UniversalToasterConfig = {
 
 
 /**
- * Universal Toaster (v3.1 - Mobile Viewport Fix)
+ *  Toaster (v3.1 - Mobile Viewport Fix)
  * ------------------------------------------------------------------
  * Fixes: Tooltips getting cut off on small mobile screens.
  * Features:
